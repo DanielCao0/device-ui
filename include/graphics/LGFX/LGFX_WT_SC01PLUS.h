@@ -36,17 +36,17 @@ class LGFX_WT_SC01_PLUS : public lgfx::LGFX_Device
 #if CONFIG_IDF_TARGET_ESP32S3
             cfg.freq_read = 16000000;
 #endif
-            cfg.pin_wr = 47;
+            cfg.pin_wr = 13;
             cfg.pin_rd = -1;
-            cfg.pin_rs = 0;
-            cfg.pin_d0 = 9;
-            cfg.pin_d1 = 46;
-            cfg.pin_d2 = 3;
-            cfg.pin_d3 = 8;
-            cfg.pin_d4 = 18;
-            cfg.pin_d5 = 17;
-            cfg.pin_d6 = 16;
-            cfg.pin_d7 = 15;
+            cfg.pin_rs = 14;
+            cfg.pin_d0 = 11;
+            cfg.pin_d1 = 10;
+            cfg.pin_d2 = 4;
+            cfg.pin_d3 = 9;
+            cfg.pin_d4 = 2;
+            cfg.pin_d5 = 1;
+            cfg.pin_d6 = 46;
+            cfg.pin_d7 = 42;
             _bus_instance.config(cfg);
             _panel_instance.setBus(&_bus_instance);
         }
@@ -55,7 +55,7 @@ class LGFX_WT_SC01_PLUS : public lgfx::LGFX_Device
             auto cfg = _panel_instance.config();
 
             cfg.pin_cs = -1;
-            cfg.pin_rst = 4;
+            cfg.pin_rst = -1;
             cfg.pin_busy = -1;
 
 #ifdef USE_LANDSCAPE
@@ -98,14 +98,14 @@ class LGFX_WT_SC01_PLUS : public lgfx::LGFX_Device
             cfg.x_max = screenWidth - 1;
             cfg.y_min = 0;
             cfg.y_max = screenHeight - 1;
-            cfg.pin_int = 7;
+            cfg.pin_int = 40;
             cfg.bus_shared = true;
             cfg.offset_rotation = 0;
             // I2C
             cfg.i2c_port = 0;
             cfg.i2c_addr = 0x38;
-            cfg.pin_sda = 6;
-            cfg.pin_scl = 5;
+            cfg.pin_sda = 39;
+            cfg.pin_scl = 38;
             cfg.freq = 400000;
 
             _touch_instance.config(cfg);
