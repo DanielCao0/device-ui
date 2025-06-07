@@ -41,7 +41,7 @@ class LGFX_WT_SC01_PLUS : public lgfx::LGFX_Device
             cfg.pin_rs = 14;
             cfg.pin_d0 = 11;
             cfg.pin_d1 = 10;
-            cfg.pin_d2 = 4;
+            cfg.pin_d2 = 17;
             cfg.pin_d3 = 9;
             cfg.pin_d4 = 2;
             cfg.pin_d5 = 1;
@@ -55,7 +55,7 @@ class LGFX_WT_SC01_PLUS : public lgfx::LGFX_Device
             auto cfg = _panel_instance.config();
 
             cfg.pin_cs = -1;
-            cfg.pin_rst = -1;
+            cfg.pin_rst = 41;
             cfg.pin_busy = -1;
 
 #ifdef USE_LANDSCAPE
